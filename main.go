@@ -8,6 +8,8 @@ import (
 )
 
 func main() {
+
+	//полачем данные из .env
 	err := godotenv.Load(".env")
 	if err != nil {
 		return
@@ -16,7 +18,8 @@ func main() {
 	host := os.Getenv("HOST")
 	fmt.Printf("token: %s", token)
 
-	tgClient = telegram.New(host, token)
+	//
+	tgClient := telegram.New(host, token)
 
 	//fetcher =fetcher.New()
 
